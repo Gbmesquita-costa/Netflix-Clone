@@ -31,7 +31,7 @@ export async function RecentlyAdded(): Promise<JSX.Element> {
   })
 
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 mt-8 gap-6">
+    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 mt-8 gap-6 mb-24">
       {data.map((movie) => (
         <div key={movie.id} className="relative h-48">
           <Image

@@ -6,13 +6,14 @@ import { usePathname } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { Heart, PlayCircle } from "lucide-react";
 
-import { addTowatchlist, deleteFromWatchlist } from "../../action";
+import { addTowatchlist, deleteFromWatchlist } from "../../actions";
 import { PlayVideoModal } from "../playVideoModal";
 
 interface iAppProps {
   title: string;
   overview: string;
   movieId: number;
+  searchMovie?: boolean;
   watchList: boolean;
   wachtListId: string;
   youtubeUrl: string;
@@ -27,6 +28,7 @@ export function MovieCard({
   title,
   wachtListId,
   watchList,
+  searchMovie,
   youtubeUrl,
   age,
   time,
@@ -41,25 +43,29 @@ export function MovieCard({
         <PlayCircle className="h-20 w-20" />
       </button>
 
-      <div className="right-5 top-5 absolute z-10">
-        {watchList ? (
-          <form action={deleteFromWatchlist}>
-            <input type="hidden" name="watchlistId" value={wachtListId} />
-            <input type="hidden" name="pathname" value={pathName} />
-            <Button variant="outline" size="icon">
-              <Heart className="w-4 h-4 text-red-500" />
-            </Button>
-          </form>
-        ) : (
-          <form action={addTowatchlist}>
-            <input type="hidden" name="movieId" value={movieId} />
-            <input type="hidden" name="pathname" value={pathName} />
-            <Button variant="outline" size="icon">
-              <Heart className="w-4 h-4" />
-            </Button>
-          </form>
-        )}
-      </div>
+      {
+        !searchMovie && (
+          <div className="right-5 top-5 absolute z-10">
+            {watchList ? (
+              <form action={deleteFromWatchlist}>
+                <input type="hidden" name="watchlistId" value={wachtListId} />
+                <input type="hidden" name="pathname" value={pathName} />
+                <Button variant="outline" size="icon">
+                  <Heart className="w-4 h-4 text-red-500" />
+                </Button>
+              </form>
+            ) : (
+              <form action={addTowatchlist}>
+                <input type="hidden" name="movieId" value={movieId} />
+                <input type="hidden" name="pathname" value={pathName} />
+                <Button variant="outline" size="icon">
+                  <Heart className="w-4 h-4" />
+                </Button>
+              </form>
+            )}
+          </div>
+        )
+      }
 
       <div className="p-5 absolute bottom-0 left-0">
         <h1 className="font-bold text-lg line-clamp-1">{title}</h1>

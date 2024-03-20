@@ -101,9 +101,9 @@ async function getData(category: string, userId: string) {
 }
 
 export default async function CategoryPage({
-  params,
+  params
 }: {
-  params: { genre: string };
+  params: { genre: string }
 }): Promise<JSX.Element> {
   const session = await getServerSession(authOptions)
   const data = await getData(params.genre, session?.user?.email as string)
@@ -111,23 +111,34 @@ export default async function CategoryPage({
   const capitalizeWords = (str: string) => {
     // Split the string into words
     const words = str.split(" ")
-  
+
     // Maps each word by capitalizing the first letter and lowercase the rest of the word
     const capitalizedWords = words.map(word => {
       const lowerCaseWord = word.toLowerCase()
       return lowerCaseWord.charAt(0).toUpperCase() + lowerCaseWord.slice(1)
     })
-  
+
     return capitalizedWords.join(" ")
   }
 
   return (
-    <>
-      <h1 className="text-white text-4xl font-bold underline mt-10 px-5 sm:px-0">
+    <div className="p-5 lg:p-0">
+      <h1 className="text-white text-4xl font-bold underline mt-10">
         {capitalizeWords(params.genre)}
       </h1>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 mt-8 gap-6 p-5">
+      {
+        data.length === 0 && (
+          <div className="w-full flex justify-center mt-52">
+            <h2 className="text-zinc-400 text-lg text-center">
+              What you are looking for does not exist or has <br /> 
+              not been added recently
+            </h2>
+          </div>
+        )
+      }
+
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 mt-8 gap-6 mb-24">
         {data.map((movie) => (
           <div key={movie.id} className="relative h-60">
             <Image
@@ -164,6 +175,6 @@ export default async function CategoryPage({
           </div>
         ))}
       </div>
-    </>
+    </div>
   )
 }

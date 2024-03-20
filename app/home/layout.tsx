@@ -7,7 +7,7 @@ import { authOptions } from "../utils/auth";
 import { Navbar } from "../components/navbar";
 
 export default async function HomeLayout({
-  children,
+  children
 }: {
   children: ReactNode;
 }): Promise<JSX.Element> {

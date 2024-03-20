@@ -10,17 +10,6 @@ import {
 } from "@/components/ui/sheet";
 
 import {
-  Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger,
-} from "@/components/ui/dialog";
-
-import { Input } from "@/components/ui/input";
-
-import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuLabel,
@@ -28,14 +17,14 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 
-import { Bell, Menu, Search } from "lucide-react";
+import { Bell, Menu } from "lucide-react";
 import { Links } from "./navbarComponents/links";
 
 import { UserNav } from "../userNav";
 import { ToggleLinks } from "./navbarComponents/toggleLinks";
 
 import { ToggleUserNav } from "../userNav/userNavComponents/toggleUserNav";
-import { Button } from "@/components/ui/button";
+import { SearchMovie } from "./navbarComponents/searchMovie";
 
 export async function Navbar(): Promise<JSX.Element> {
   return (
@@ -43,7 +32,7 @@ export async function Navbar(): Promise<JSX.Element> {
       <div className="flex items-center">
         <Link href="/home" className="w-24 md:w-32">
           <Image
-            src={"netflix_logo.svg"}
+            src={"/netflix_logo.svg"}
             width={128}
             height={128}
             alt="Netflix logo"
@@ -55,36 +44,7 @@ export async function Navbar(): Promise<JSX.Element> {
       </div>
 
       <div className="flex items-center gap-x-8 mr-8 ml-auto md:ml-0">
-        <Dialog>
-          <DialogTrigger asChild>
-            <Search className="w-5 h-5 text-gray-300 cursor-pointer" />
-          </DialogTrigger>
-          <DialogContent className="sm:max-w-md">
-            <DialogHeader>
-              <DialogTitle>Search</DialogTitle>
-              <DialogDescription>
-                Search for any titles, people, gender...
-              </DialogDescription>
-            </DialogHeader>
-            <div className="flex items-center space-x-2">
-              <div className="grid flex-1 gap-2">
-                <Input
-                  id="link"
-                  type="text"
-                  placeholder="Search..."
-                />
-              </div>
-              <Button 
-                type="submit" 
-                variant={"ghost"} 
-                size="sm" 
-                className="p-5"
-              >
-                <Search/>
-              </Button> 
-            </div>
-          </DialogContent>
-        </Dialog>
+        <SearchMovie/>
 
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
