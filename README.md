@@ -1,6 +1,6 @@
 # Netflix Clone
 
-![Netflix Clone Banner](/netflix_logo.svg)
+![Netflix Clone Banner](/public/netflix_logo.svg)
 
 ## Descrição
 Este é um clone da Netflix construído com Next.js 14, utilizando suas novas features como Server Actions, e integrando diversas tecnologias poderosas como Prisma, autenticação com o NextAuth.js, Supabase e Tailwind CSS.
