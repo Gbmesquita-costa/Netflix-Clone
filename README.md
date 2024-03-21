@@ -12,7 +12,9 @@ Este é um clone da Netflix construído com Next.js 14, utilizando suas novas fe
 - **Autenticação via NextAuth.js:** Possibilita a autenticação de usuários utilizando o google ou o github.
 - **Estilização com Tailwind CSS:** Utiliza o Tailwind CSS para estilizar a interface do usuário de forma eficiente.
 
-![project netflix clone](https://github.com/Gbmesquita-costa/Netflix-Clone/assets/95727524/62863c04-38cb-45ad-970b-270c8c1bbbd6)
+<div align="center">
+  ![project netflix clone](https://github.com/Gbmesquita-costa/Netflix-Clone/assets/95727524/62863c04-38cb-45ad-970b-270c8c1bbbd6)
+</div>
 
 ## Instalação e Uso
 
