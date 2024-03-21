@@ -1,36 +1,39 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Netflix Clone
 
-## Getting Started
+![Netflix Clone Banner](/netflix_logo.svg)
 
-First, run the development server:
+## Descrição
+Este é um clone da Netflix construído com Next.js 14, utilizando suas novas features como Server Actions, e integrando diversas tecnologias poderosas como Prisma, autenticação com o NextAuth.js, Supabase e Tailwind CSS.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Funcionalidades Principais
+- **Replicação da Interface do Netflix:** Recria a experiência de navegação e visualização da Netflix.
+- **Integração com Prisma:** Utiliza Prisma para interagir com o banco de dados.
+- **Cadastro de usuário com Supabase:** Possibilita o cadastro de usuários utilizando Supabase.
+- **Autenticação via NextAuth.js:** Possibilita a autenticação de usuários utilizando o google ou o github.
+- **Estilização com Tailwind CSS:** Utiliza o Tailwind CSS para estilizar a interface do usuário de forma eficiente.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Instalação e Uso
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+1. Clone este repositório:
+   ```bash
+   git clone https://github.com/seu-usuario/netflix-clone.
+   
+2. Instale as dependências:
+   ```bash
+   cd Netflix-Clone
+   npm install, yarn ....
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+3. **Configure as variáveis de ambiente:**
+   ```bash
+   . Crie um arquivo `.env` na raiz do projeto e adicione as variáveis necessárias, como chaves de API do Supabase, configurações do NextAuth,
+    configurações do Prisma, etc. No projeto, há um arquivo chamado `.env.example`, onde você pode encontrar um exemplo das variáveis necessárias para o funcionamento do projeto. Certifique-se de preencher todas as variáveis relevantes conforme as instruções fornecidas no arquivo `.env.example`.
 
-## Learn More
+## Contribuição
 
-To learn more about Next.js, take a look at the following resources:
+Contribuições são bem-vindas! Se você quiser contribuir para este projeto, siga estas etapas:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+1. Faça um fork do projeto
+2. Crie uma nova branch (`git checkout -b feature/nova-feature`)
+3. Faça commit das suas alterações (`git commit -m 'Adicione uma nova feature'`)
+4. Faça push para a branch (`git push origin feature/nova-feature`)
+5. Abra um pull request
